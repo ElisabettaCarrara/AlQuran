@@ -9,6 +9,14 @@ Author URI: http://ibasit.me
 License: Simple Public License (Simple-2.0)
 */
 
+// First task will be commenting all code to understand what it does
+// Second task will be to replace references to globalquran.com with alquran.cloud ones
+// Third task extended testing prior to releasing
+
+
+/* This code adds two filters to let plugin retrieve quran tags from the source content and uses function to output them
+It uses a preg_match to instruct plugin to substitute shortcode with html taken from source and returns it */
+
 add_filter('the_content', 'findQuranTag');
 function findQuranTag ($text)
 {
@@ -41,6 +49,8 @@ function GlobalQuran_remove() {
 	delete_option('gq_css_print_url');
 }
 
+/* This lines of code call another file and execute it.
+This file is used to create plugin menu in admin dashboard with settings */
 
 function GlobalQuran_admin () {
 	include 'gq_admin.php';
@@ -56,10 +66,11 @@ add_action('admin_menu', 'GlobalQuran_admin_actions');
  */
 function renderQuran ()
 {
-	// html url to the application
+	// html url to the application - THSI SHOULD BE REPLACED WITH NEW API REFERENCES TO ALQURAN.CLOUD?
 	$api_url = 'http://GlobalQuran.com/';
 	$api_key = get_option('gq_key');
-
+	
+// The code below comes in action in cae api call dies and relies on curl method to render the output //
 	################## DO NOT EDIT BELOW THIS ###################################
 	if (!$api_url)
 	{
