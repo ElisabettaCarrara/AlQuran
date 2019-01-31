@@ -1,5 +1,5 @@
 ﻿=== Plugin Name ===
-Contributors: ibasit
+Contributors: ibasit, ElisabettaCarrara
 Donate link: http://blog.globalquran.com/help/wordpress-plugin/
 Tags: quran, quraan, koran, islam, deen, read, listen, audio
 Requires at least: 2.0.2
